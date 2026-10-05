@@ -1,15 +1,17 @@
 /* ===== Design tokens ===== */
 :root {
-  --ink: #14213d;
-  --ink-soft: #4a5568;
-  --paper: #fbf8f3;
-  --paper-alt: #f1ebe0;
-  --card: #ffffff;
-  --accent: #e07a1f;
-  --accent-dark: #b85f10;
-  --line: #e2dccf;
+  color-scheme: dark;
+  --ink: #e8ecf4;          /* main text */
+  --ink-soft: #a6b0c5;     /* secondary text */
+  --paper: #0e1523;        /* page background */
+  --paper-alt: #131c2e;    /* alternate section background */
+  --card: #1a2438;         /* cards */
+  --accent: #f0903a;
+  --accent-dark: #f5a35c;  /* accent text/links (lightened for contrast on dark) */
+  --on-accent: #101827;    /* text placed on accent-coloured buttons */
+  --line: #2a3650;
   --radius: 14px;
-  --shadow: 0 6px 24px rgba(20, 33, 61, 0.08);
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-head: "Fraunces", Georgia, "Times New Roman", serif;
 }
@@ -50,7 +52,7 @@ p { margin: 0 0 1em; }
 /* ===== Header / nav ===== */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(251, 248, 243, 0.92);
+  background: rgba(14, 21, 35, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -72,7 +74,7 @@ p { margin: 0 0 1em; }
 .hero {
   padding: clamp(3rem, 8vw, 6rem) 0;
   background:
-    radial-gradient(circle at 85% 20%, rgba(224, 122, 31, 0.14), transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(240, 144, 58, 0.16), transparent 45%),
     var(--paper);
 }
 .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; align-items: center; gap: 3rem; }
@@ -99,10 +101,10 @@ p { margin: 0 0 1em; }
   transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-primary { background: var(--ink); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: var(--on-accent); }
 .btn-ghost { background: transparent; color: var(--ink); }
-.btn-ghost:hover { background: var(--ink); color: #fff; }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
 
 /* ===== Sections ===== */
 .section { padding: clamp(3rem, 7vw, 5rem) 0; }
@@ -146,7 +148,7 @@ p { margin: 0 0 1em; }
 .contact-list a:hover { border-color: var(--accent); color: var(--accent-dark); }
 
 /* ===== Footer ===== */
-.site-footer { background: var(--ink); color: #d8dce6; text-align: center; padding: 1.6rem 1rem; font-size: 0.92rem; }
+.site-footer { background: #0a101b; border-top: 1px solid var(--line); color: var(--ink-soft); text-align: center; padding: 1.6rem 1rem; font-size: 0.92rem; }
 .site-footer p { margin: 0; }
 
 /* ===== Focus styles ===== */
